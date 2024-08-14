@@ -71,34 +71,34 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     // Verifica se os números são válidos
-    if (isValidPhone(numberTel.value) && isValidPhone(numberCel.value)) {
+    if (validaPhone(numberTel.value) && validaPhone(numberCel.value)) {
         addContato();
         atualizaAgenda();
     } else {
-        alert('Por favor, insira números válidos no formato (00) 0000-0000 ou (00) 00000-0000.');
+        alert('Por favor, insira números válidos com DD + Telefone, 10 dígitos para o Telefone e 11 dígitos para o Celular.');
     }
 });
 
-function isValidPhone(value) {
+function validaPhone(phone) {
     // Remove tudo que não é número
-    const cleanValue = value.replace(/\D/g, '');
+    const cleanValue = phone.replace(/\D/g, '');
 
     // Verifica se o número tem 10 ou 11 dígitos
     return cleanValue.length === 10 || cleanValue.length === 11;
 }
 
-function formatPhone(value) {
-    value = value.replace(/\D/g, ''); // Remove tudo que não é dígito
+function formatPhone(phone) {
+    phone = phone.replace(/\D/g, ''); // Remove tudo que não é dígito
 
     // Formatação: (00) 0000-0000 ou (00) 00000-0000
-    if (value.length > 10) {
-        return value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-    } else if (value.length > 6) {
-        return value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
-    } else if (value.length > 2) {
-        return value.replace(/(\d{2})(\d{0,4})/, '($1) $2');
-    } else if (value.length > 0) {
-        return value.replace(/(\d{2})/, '($1');
+    if (phone.length > 10) {
+        return phone.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    } else if (phone.length > 6) {
+        return phone.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+    } else if (phone.length > 2) {
+        return phone.replace(/(\d{2})(\d{0,4})/, '($1) $2');
+    } else if (phone.length > 0) {
+        return phone.replace(/(\d{2})/, '($1');
     } else {
         return '';
     }
