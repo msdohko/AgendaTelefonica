@@ -14,7 +14,6 @@ form.addEventListener('submit', function(e) {
     if (validaPhone(numberTel.value) && validaPhone(numberCel.value)) {
         addContato();
         atualizaAgenda();
-        atualizaTotalNumeros();
     } else {
         alert('Por favor, insira números válidos com DD + Telefone, 10 dígitos para o Telefone e 11 dígitos para o Celular.');
     }
@@ -43,7 +42,6 @@ function formatPhone(phone) {
 
 //função adiciona linha a linha na tabela da agenda
 function addContato() {
-    nomes.push(nomeContato.value);
     
     let linha = '<tr>';
     linha += `<td>${nomeContato.value}</td>`;
@@ -62,13 +60,4 @@ function addContato() {
 function atualizaAgenda() {
     const corpoAgenda = document.querySelector('tbody');
     corpoAgenda.innerHTML = linhas;
-}
-
-function totalInput(){
-    return nomes.length;
-}
-
-function atualizaTotalNumeros(){
-    const total = totalInput();
-    document.getElementById('total-numeros').innerHTML = total;
 }
