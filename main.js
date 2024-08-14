@@ -25,6 +25,22 @@ function validaCel(phone) {
     return caracter.length === 11;
 }
 
+function formatPhone(value) {
+    value = value.replace(/\D/g, ''); // Remove tudo que não é dígito
+
+    // Formatação: (00) 0000-0000 ou (00) 00000-0000
+    if (value.length > 10) {
+        return value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    } else if (value.length > 6) {
+        return value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+    } else if (value.length > 2) {
+        return value.replace(/(\d{2})(\d{0,4})/, '($1) $2');
+    } else if (value.length > 0) {
+        return value.replace(/(\d{2})/, '($1');
+    } else {
+        return '';
+    }
+}
 
 function addContato() {
     let linha = '<tr>';
