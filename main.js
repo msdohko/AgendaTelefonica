@@ -22,7 +22,7 @@ function validaPhone(phone) {
     const caracterPhone = phone.replace(/\D/g, '');
 
     // Verifica se o número tem 10 ou 11 dígitos
-    return caracterPhone.length === 10 || caracterPhone.length === 11;
+    return caracterPhone.length === 10 && phone.length <=14|| caracterPhone.length === 11 && phone.length <=15;
 }
 
 function formatPhone(phone) {
