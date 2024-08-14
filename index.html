@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-be">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Agenda Telefônica</title>
+</head>
+<body>
+    <div class="caderno">
+        <img src="./imagens/espiral.png" alt="Espiral">
+        <div class="container">
+            <header>
+                <h1>Agenda Telefônica</h1>
+            </header>
+            <form id="agendaContato">
+            <div class="campo">
+                <input id="nomeContato" type="text" required>
+                <span>Nome do contato</span>
+            </div>
+            <div class="campo">
+                <input id="numberTel" type="number" maxlength="14" required>
+                <span>Telefone</span>
+            </div>
+            <div class="campo">
+                <input id="numberCel" type="number" maxlength="14" required>
+                <span>Celular</span>
+            </div>
+                <button type="submit">+</button>
+            </form>
+            <table cellspacing="0">
+                <thead>
+                    <tr>
+                        <th><img id="contact" src="./imagens/contact.png" alt="Contato">Nome</th>
+                        <th><img id="phone" src="./imagens/telephone.png" alt="Telefone">Telefone</th>
+                        <th><img id="celphone" src="./imagens/celular.png" alt="Celular" >Celualr</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nome do contato</td>
+                        <td>(00) 0000-0000</td>
+                        <td>(00) 0000-0000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

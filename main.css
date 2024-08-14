@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(174, 220, 174);
+    padding-top: 100px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+header h1{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.campo{
+    position: relative;
+    width: 170px;
+}
+
+.campo input{
+    width: 100%;
+    padding: 16px;
+    border: 1px solid rgba(211, 211, 211, 0.9);
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.campo span{
+    position: absolute;
+    left: 0;
+    padding: 18px;
+    pointer-events: none;
+    font-size: 16px;
+    color: gray;
+    transition: 0.3s;
+}
+
+.campo input:valid,
+.campo input:focus{
+    border: 2px solid gray;
+    outline: none;
+}
+
+.campo input:valid ~span,
+.campo input:focus ~span{
+    color: #fff;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 12px;
+    padding: 0 16px;
+    background: gray;
+    border-radius: 2px;
+}
+
+.caderno{
+    display: flex;
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5),
+    -10px -10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container{
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 56px;
+    background-color: #fff;
+
+}
+
+form{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 56px;
+}
+
+form button{
+    background-color: gray;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 32px;
+    outline: none;
+}
+
+table{
+    width: 100%;
+}
+
+table th{
+    border-bottom: 2px solid #000;
+    padding: 8px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+table td{
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #000;
+}
+
+thead img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+tbody{
+    text-transform: uppercase;
+}
