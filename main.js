@@ -3,6 +3,8 @@ const form = document.getElementById('agendaContato');
 const nomeContato = document.getElementById('nomeContato');
 const numberTel = document.getElementById('numberTel');
 const numberCel = document.getElementById('numberCel');
+const nomes = [];
+
 let linhas = '';
 
 form.addEventListener('submit', function(e) {
@@ -57,4 +59,13 @@ function addContato() {
 function atualizaAgenda() {
     const corpoAgenda = document.querySelector('tbody');
     corpoAgenda.innerHTML = linhas;
+}
+
+function totalInput(){
+    return nomes.length;
+}
+
+function atualizaTotalNumeros(){
+    const total = totalInput();
+    document.getElementById('total-numeros').innerHTML = total;
 }
