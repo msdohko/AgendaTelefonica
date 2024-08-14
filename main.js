@@ -81,10 +81,10 @@ form.addEventListener('submit', function(e) {
 
 function validaPhone(phone) {
     // Remove tudo que não é número
-    const cleanValue = phone.replace(/\D/g, '');
+    const caracterPhone = phone.replace(/\D/g, '');
 
     // Verifica se o número tem 10 ou 11 dígitos
-    return cleanValue.length === 10 || cleanValue.length === 11;
+    return caracterPhone.length === 10 || caracterPhone.length === 11;
 }
 
 function formatPhone(phone) {
