@@ -93,12 +93,6 @@ function formatPhone(phone) {
     // Formatação: (00) 0000-0000 ou (00) 00000-0000
     if (phone.length > 10) {
         return phone.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-    } else if (phone.length > 6) {
-        return phone.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
-    } else if (phone.length > 2) {
-        return phone.replace(/(\d{2})(\d{0,4})/, '($1) $2');
-    } else if (phone.length > 0) {
-        return phone.replace(/(\d{2})/, '($1');
     } else {
         return '';
     }
